@@ -3,6 +3,10 @@
 Docker image containing Consul and Envoy which can also register services and central config when starting.
 Can be used for registering services or config, or when you need an Envoy sidecar.
 
+**GitHub Repo**: <https://github.com/robertpeteuil/docker-consul-envoy>
+
+**Docker Hub Images**: <https://hub.docker.com/repository/docker/robpco/consul-envoy>
+
 ## Usage
 
 ```bash
