@@ -11,7 +11,7 @@ docker run --rm \
   -e "CONSUL_GRPC_ADDR=10.5.0.2:8502" \
   -e "SERVICE_CONFIG=/config/web.json" \
   -v $(pwd)/service_config:/config \
-  robpco/robpco/consul-envoy:v1.6.2-v1.12.2 \
+  robpco/consul-envoy:v1.6.2-v1.12.2 \
   bash -c "consul connect envoy -sidecar-for web-v1"
 ```
 
@@ -78,7 +78,7 @@ resource "kubernetes_job" "central_config" {
         }
 
         container {
-          image = "robpco/robpco/consul-envoy:v1.6.2-v1.12.2"
+          image = "robpco/consul-envoy:v1.6.2-v1.12.2"
           name = "central-config"
 
           env {
@@ -159,7 +159,7 @@ spec:
           name: central-config-split
       containers:
       - name: central-config-split
-        image: "robpco/robpco/consul-envoy:v1.6.2-v1.12.2"
+        image: "robpco/consul-envoy:v1.6.2-v1.12.2"
         env:
         - name: "CONSUL_HTTP_ADDR"
           value: "consul-consul-server:8500"
